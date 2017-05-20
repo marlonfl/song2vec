@@ -7,7 +7,8 @@ import re
 def parse_title(raw):
     nosqbrackets = re.sub(r'\[.+?\]', '', raw.lower())
     rmvideo = re.sub(r'\(o.+? video\)', '', nosqbrackets)
-
+    # replace stuff in parentheses ending in Video
+    # merge all feat. variants into ft. without parentheses 
     return rmvideo.strip()
 
 def to_input(s):
